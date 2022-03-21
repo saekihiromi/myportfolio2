@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head prefix="og: http://xs722533.xsrv.jp/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta property="og:url" content=" http://xs722533.xsrv.jp/" />
+    <meta property="og:type" content=" website" />
+    <meta property="og:title" content=" サンプルページ ひろみくん" />
+    <meta property="og:description" content=" フロントエンド強化！！SASS" />
+    <meta property="og:site_name" content="ひろみくん" />
+    <meta property="og:image" content="http://xs722533.xsrv.jp/img/photo1.jpg" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bassooooon0326" />
+    
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+
+        <div class="header__wrap">
+            <h1 class="header__logo">My Portfolio</h1>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ここからメインコンテンツ -->
+    <main>
+        <!-- videoセクション -->
+        <div id="video">
+            <video src="./videos/video.mp4" muted autoplay loop></video>
+        </div>
+
+        <!-- aboutセクション -->
+        <section id="about" class="section">
+            <div class="headline">
+                <h2 class="headline__title">ABOUT</h2>
+            </div>
+            <div class="aboutBox">
+                <div class="aboutBox__profile">
+                    <h3>My Portfolio</h3>
+                    <!-- lorem*4 -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At laborum maiores, impedit necessitatibus, repellat non recusandae nemo cumque autem ad temporibus corporis porro, fugiat adipisci. Exercitationem deserunt delectus pariatur aperiam.
+                    Dolor voluptate perspiciatis, sint quos, exercitationem distinctio vel cumque, maxime dolorem consequuntur saepe dignissimos autem similique! Voluptate cum provident quod expedita vero sint quo, labore eaque nesciunt perspiciatis, aliquam maxime!
+                    Corporis, perferendis? Ab eaque quasi laudantium fuga itaque! Maiores impedit maxime repellat temporibus inventore quam fugit praesentium rerum nostrum sequi dolorum, asperiores, repudiandae quis officia vel voluptatibus velit aspernatur. Impedit.
+                    Suscipit ducimus eveniet ut aliquam distinctio pariatur inventore dolore beatae eaque adipisci vel reprehenderit voluptate, nisi earum, quaerat magni consectetur. Ratione consequuntur atque tempora eaque excepturi ad modi, pariatur neque.</p>
+                </div>
+                <img src="./img/photo1.jpg" alt="">
+            </div>
+        </section>
+
+        <!-- portfolioセクション -->
+        <section id="portfolio" class="section">
+            <div class="headline">
+                <h2 class="headline__title">PORTFOLIO</h2>
+            </div>
+            <div class="portfolioBox">
+                <div class="portrait">
+                    <h3>PORTRAIT</h3>
+                </div>
+                <div class="musicVideo">
+                    <h3>MUSIC VIDEO</h3>
+                </div>
+                <div class="landscape">
+                    <h3>LANDSCAPE</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- newsセクション -->
+        <section id="news" class="section">
+            <div class="headline headline--gray">
+                <h2 class="headline__title headline__title--bk">NEWS</h2>
+            </div>
+            <div class="newsContent">
+                <article>
+                    <img class="newsContent__img" src="./img/photo5.jpg" alt="">
+                    <p class="newsContent__date">1 Aug 2021</p>
+                    <h3 class="newsContent__text">
+                        SampleTextSampleTextSampleTextSampleTextSampleTextSampleTextSampleTextSampleText</h3>
+                </article>
+                <article>
+                    <img class="newsContent__img" src="./img/photo6.jpg" alt="">
+                    <p class="newsContent__date">1 Aug 2021</p>
+                    <h3 class="newsContent__text">
+                        SampleTextSampleTextSampleTextSampleTextSampleTextSampleTextSampleTextSampleText</h3>
+                </article>
+                <article>
+                    <img class="newsContent__img" src="./img/photo7.jpg" alt="">
+                    <p class="newsContent__date">1 Aug 2021</p>
+                    <h3 class="newsContent__text">
+                        SampleTextSampleTextSampleTextSampleTextSampleTextSampleTextSampleTextSampleText</h3>
+                </article>
+            </div>
+            <a href="" class="moreLink">MORE</a>
+        </section>
+
+        <!-- contactセクション -->
+        <section id="contact" class="section">
+            <div class="headline">
+                <h2 class="headline__title">CONTACT</h2>
+            </div>
+            <div class="contact__form">
+                <form action="index.html">
+                    <p>NAME *</p>
+                    <input type="text">
+                    <p>MAIL *</p>
+                    <input type="text">
+                    <p>TEL *</p>
+                    <input type="text">
+                    <p>MESSAGE *</p>
+                    <input type="text">
+                    <input class="formButton" type="submit" value="SEND">
+                </form>
+            </div>
+        </section>
+        
+    </main>
+    <!-- メインコンテンツはここまで -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <p>© allrights reserved My Portfolio</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+// よく使うカラーコードを変数化
+$white:#FFFFFF;
+
+// ここはボタンのスタイル
+@mixin btn($bgColor, $color) {
+    background-color: $bgColor;
+    color: $color;
+    display: block;
+    width: 160px;
+    height: 48px;
+    margin: 0 auto;
+    line-height: 48px;
+    text-align: center;
+}
+
+// ここはポートフォリオ画像のスタイル
+@mixin portfolioImage($path) {
+    background: url($path), center, center, no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+// ここはここはポートフォリオ画像オーバーレイのスタイル
+@mixin overlay {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3));
+}
+//アニメーションの記述
+@keyframes slidInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+
+    100%{
+        opacity: 0;
+        transform: translateX(0px);
+    }
+}
+
+//アニメーションの記述
+@keyframes zoomIn {
+    0%{
+        opacity: 0;
+        transform: scale(0,0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+
+
+body {
+    background-color: #000000;
+}
+
+.section {
+    margin: 0 auto;
+    margin-top: 360px;
+}
+
+.headline {
+    text-align: center;
+    margin-bottom: 100px;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 200px;
+        background-color: #643250;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    &__title {
+        color: $white;
+        font-size: 24px;
+        position: relative;
+    }
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    line-height: 100px;
+    position: fixed;
+    z-index: 3;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1280px;
+        padding: 0 30px;
+        margin: 0 auto;
+
+        .header__logo {
+            color: $white;
+            font-size: 30px;
+        }
+
+        .header__nav {
+            ul {
+                display: flex;
+
+                li {
+                    color: $white;
+                    font-size: 14px;
+                    margin-left: 28px;
+
+                    a {position: relative;}
+
+                    a::after{
+                        position: absolute;
+                        left: 0;
+                        bottom: -8px;
+                        content: '';
+                        width: 100%;
+                        height: 4px;
+                        background: #643250;
+                        transform: scale(0,1);
+                        transform-origin: left top;
+                        transition: 0.3s;
+                    }
+
+                    a:hover::after{
+                        transform: scale(1,1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#video {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 100px 30px 0;
+
+    video {
+        width: 100%;
+    }
+}
+
+#about {
+    max-width: 1280px;
+    padding-left: 30px;
+
+    .aboutBox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .aboutBox__profile {
+            padding-right: 30px;
+            animation: slidInleft 3s linear;
+        }
+
+        h3 {
+            color: $white;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        p {
+            color: $white;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    }
+
+    img {
+        width: 50%;
+        padding-right: 30px;
+    }
+}
+
+#portfolio {
+    max-width: 1280px;
+    padding: 0 30px;
+
+    .portfolioBox {
+        width: 100%;
+        height: 680px;
+        display: flex;
+
+        .portrait {
+            @include portfolioImage("../img/photo2.jpg");
+
+            &::before {
+                @include overlay();
+            }
+
+            &:hover::before{
+                background: none;
+            }
+        }
+
+        .musicVideo {
+            @include portfolioImage("../img/photo3.jpg");
+
+            &::before {
+                @include overlay();
+            }
+
+            &:hover::before{
+                background: none;
+            }
+
+        }
+
+        .landscape {
+            @include portfolioImage("../img/photo4.jpg");
+
+            &::before {
+                @include overlay();
+            }
+
+            &:hover::before{
+                background: none;
+            }
+        }
+
+        h3 {
+            color: $white;
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+#news {
+    background-color: $white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .headline--gray::before {
+        background-color: #8B8B8B;
+    }
+
+    .headline__title--bk {
+        color: #000000;
+    }
+
+    .newsContent {
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+
+        article {
+            width: 300px;
+
+            .newsContent__img {
+                display: block;
+                object-fit: cover;
+                height: 200px;
+                width: 300px;
+
+                animation: zoomIn 3s forwards linear;
+            }
+
+            .newsContent__date {
+                color: #555555;
+                font-size: 12px;
+                margin-top: 24px;
+                margin-bottom: 12px;
+            }
+
+            .newsContent__text {
+                color: #000000;
+                font-size: 16px;
+                word-wrap: break-word;
+                text-align: justify;
+                line-height: 1.5;
+            }
+
+        }
+    }
+
+    .moreLink {
+        @include btn(#000000, #FFFFFF);
+        transition: all 0.4s linear;
+    }
+    
+    .moreLink:hover{
+        @include btn(#ffffff,#000000 );
+        border: 1px solid #000000;
+    }
+}
+
+#contact {
+    .contact__form {
+        width: 560px;
+        margin: 0 auto;
+
+        p {
+            color: $white;
+            margin-bottom: 32px;
+        }
+
+        input {
+            border-bottom: 1px solid $white;
+            color: $white;
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
+        .formButton {
+            @include btn(#FFFFFF, #000000);
+            margin-top: 100px;
+            transition: all 0.4s linear;
+        }
+
+        .formButton:hover {
+            @include btn(#000000,#FFFFFF );
+            border: 1px solid #FFFFFF;
+            margin-top: 100px;
+        }
+
+        p:nth-of-type(4) {
+            margin-bottom: 64px;
+        }
+    }
+}
+
+.footer {
+    border-top: 1px solid #555555;
+    height: 100px;
+    line-height: 100px;
+    margin-top: 360px;
+
+    p {
+        color: #555555;
+        text-align: center;
+    }
+}
